@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.8 on win32)" generated="2025-01-29T10:29:31.842543" rpa="false" schemaversion="5">
+<suite id="s1" name="Local" source="C:\Users\user\Desktop\Selber\udemy_robot_web\web_testing\local.robot">
+<test id="s1-t1" name="Case Test 01 - Acesso ao menu &quot;Eletrônicos&quot;" line="10">
+<kw name="Abrir o navegador" owner="compartilha_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-29T10:29:32.547217" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com.br'.</msg>
+<arg>${URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-29T10:29:32.547217" elapsed="5.351713"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-29T10:29:37.899226" elapsed="0.133319"/>
+</kw>
+<status status="PASS" start="2025-01-29T10:29:32.546220" elapsed="5.487625"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" owner="compartilha_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-29T10:29:38.041621" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-29T10:29:38.041099" elapsed="1.295168"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENU_TODOS}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-29T10:29:39.336494" elapsed="0.118053"/>
+</kw>
+<status status="PASS" start="2025-01-29T10:29:38.039397" elapsed="1.415150"/>
+</kw>
+<kw name="Entrar no menu &quot;Todos&quot;" owner="compartilha_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-29T10:29:39.455544" level="INFO">Clicking element '//a[contains(@aria-label,'Abrir o menu Todas as categorias')]'.</msg>
+<arg>${MENU_TODOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-29T10:29:39.455544" elapsed="0.268884"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENU_MAIS_VENDIDOS}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-29T10:29:39.725421" elapsed="0.504905"/>
+</kw>
+<status status="PASS" start="2025-01-29T10:29:39.454547" elapsed="0.775779"/>
+</kw>
+<kw name="Entrar no menu &quot;Mais Vendidos&quot;" owner="compartilha_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-29T10:29:40.231324" level="INFO">Clicking element '//div[@id="hmenu-content"]/ul[1]/li[2]/a'.</msg>
+<arg>${MENU_MAIS_VENDIDOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-29T10:29:40.231324" elapsed="3.141934"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENU_ELETRONICOS}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-29T10:29:43.373258" elapsed="0.039596"/>
+</kw>
+<status status="PASS" start="2025-01-29T10:29:40.231324" elapsed="3.181530"/>
+</kw>
+<kw name="Entrar no menu &quot;Eletrônicos&quot;" owner="compartilha_resources">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${MENU_ELETRONICOS}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-01-29T10:29:43.413852" elapsed="0.336961"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-29T10:29:48.751746" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-29T10:29:43.750813" elapsed="5.000933"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-29T10:29:48.751746" level="INFO">Clicking element 'xpath=(//a[text()='Eletrônicos'])[2]'.</msg>
+<arg>${MENU_ELETRONICOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-29T10:29:48.751746" elapsed="1.480887"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Eletrônicos</arg>
+<arg>timeout=40s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-29T10:29:50.232633" elapsed="0.021078"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENU_COMPUTADORES}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-29T10:29:50.253711" elapsed="0.020801"/>
+</kw>
+<status status="PASS" start="2025-01-29T10:29:43.413852" elapsed="6.860660"/>
+</kw>
+<kw name="Entrar no menu &quot;Computadores e Informática&quot;" owner="compartilha_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-29T10:29:50.275576" level="INFO">Clicking element 'xpath=(//a[text()='Computadores e Informática'])'.</msg>
+<arg>${MENU_COMPUTADORES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-29T10:29:50.275576" elapsed="1.382752"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITLE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-29T10:29:51.659325" elapsed="0.021378"/>
+</kw>
+<status status="PASS" start="2025-01-29T10:29:50.275576" elapsed="1.406124"/>
+</kw>
+<kw name="Verificar se o título da página está correto &quot;Mais Vendidos em Computadores, Componentes e Acessórios&quot;" owner="compartilha_resources">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-01-29T10:29:51.709427" level="INFO">${text} = Mais Vendidos em Computadores, Componentes e Acessórios</msg>
+<var>${text}</var>
+<arg>${TITLE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-29T10:29:51.682702" elapsed="0.026725"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-01-29T10:29:51.710422" level="INFO">Texto encontrado: 'Mais Vendidos em Computadores, Componentes e Acessórios'</msg>
+<arg>Texto encontrado: '${text}'</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-01-29T10:29:51.709427" elapsed="0.000995"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Mais Vendidos em Computadores, Componentes e Acessórios</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-01-29T10:29:51.710422" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-01-29T10:29:51.681700" elapsed="0.028722"/>
+</kw>
+<kw name="Fechar navegador" owner="compartilha_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-29T10:29:51.711449" elapsed="2.962412"/>
+</kw>
+<status status="PASS" start="2025-01-29T10:29:51.711449" elapsed="2.962412"/>
+</kw>
+<doc>Esse teste verifica o menu Mais Vendido do site da Amazon
+e valida a categoria Eletrônicos</doc>
+<tag>Menus categorias</tag>
+<status status="PASS" start="2025-01-29T10:29:32.545222" elapsed="22.130684"/>
+</test>
+<doc>Essa suite testa o site da Amazon.com.br</doc>
+<status status="PASS" start="2025-01-29T10:29:31.847497" elapsed="22.832636"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Menus categorias</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Local">Local</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
