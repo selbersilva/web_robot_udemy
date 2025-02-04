@@ -7,13 +7,14 @@ ${MENU_TODOS}             //a[contains(@aria-label,'Abrir o menu Todas as catego
 ${MENU_MAIS_VENDIDOS}     //div[@id="hmenu-content"]/ul[1]/li[2]/a   
 ${MENU_ELETRONICOS}       xpath=(//a[text()='Eletrônicos'])[2]
 ${MENU_COMPUTADORES}      xpath=(//a[text()='Computadores e Informática'])
-${TITLE}                  xpath=//h1[@class='a-size-large a-spacing-medium a-text-bold'][contains(.,'Mais Vendidos em Computadores, Componentes e Acessórios')]
+${HEDER_PAGE}                  xpath=//h1[@class='a-size-large a-spacing-medium a-text-bold'][contains(.,'Mais Vendidos em Computadores, Componentes e Acessórios')]
 
 *** Keywords ***
 Abrir o navegador
     Open Browser    ${URL}    Chrome
     Maximize Browser Window
 Fechar navegador
+    Capture Page Screenshot
     Close Browser
 
 Acessar a home page do site Amazon.com.br
@@ -37,12 +38,18 @@ Entrar no menu "Eletrônicos"
 
 Entrar no menu "Computadores e Informática"
     Click Element    ${MENU_COMPUTADORES}
-    Wait Until Element Is Visible    ${TITLE}    timeout=10s
+    Wait Until Element Is Visible    ${HEDER_PAGE}    timeout=10s
 
 Verificar se o título da página está correto "Mais Vendidos em Computadores, Componentes e Acessórios"
-    ${text}=                   Get Text    ${TITLE}
+    ${text}=                   Get Text    ${HEDER_PAGE}
     Log                        Texto encontrado: '${text}'
     Should Contain             ${text}    Mais Vendidos em Computadores, Componentes e Acessórios
 
+Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
+    Input Text    locator=twotabsearchtextbox    text=${PRODUTO}
 
+Clicar no botão de pesquisa
+    Click Element    locator=nav-search-submit-button
 
+Verificar o resultao da pesquisa se está listando o produto "${PRODUTO}"
+    Wait Until Element Is Visible    locator=((//span[contains(.,'${PRODUTO}')])[3]) 
